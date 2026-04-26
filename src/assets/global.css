@@ -272,7 +272,39 @@ form {
 .testi-name { font-family: var(--font-head); font-weight: 600; font-size: 0.9rem; color: var(--white); }
 .testi-role { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
 
-/* ── Portfolio browser frame ─────────────────────────────────── */
+/* ── Portfolio Section ───────────────────────────────────────── */
+.portfolio-section {
+  height: 400vh;
+  position: relative;
+  background: var(--bg3);
+}
+.portfolio-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.portfolio-inner {
+  padding: 0 2rem;
+}
+.h-scroll-track {
+  display: flex;
+  gap: 6rem;
+  width: max-content;
+  padding: 0 10vw;
+  transform: translate3d(calc(var(--progress, 0) * -65%), 0, 0);
+  will-change: transform;
+}
+.pf-item {
+  display: flex;
+  gap: 3rem;
+  width: 80vw;
+  max-width: 1000px;
+  align-items: center;
+}
 .pf-browser {
   border-radius: 12px; overflow: hidden;
   border: 1px solid rgba(255,255,255,0.1);
@@ -293,6 +325,10 @@ form {
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .pf-screen { height: 480px; overflow: hidden; position: relative; }
+.pf-screen-scroll { 
+  will-change: transform; 
+  transform: translate3d(0, calc(var(--progress, 0) * -60%), 0);
+}
 .pf-screen::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
   background: linear-gradient(to top, #1a1a2a, transparent);
@@ -302,7 +338,7 @@ form {
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }
 }
-.pf-info { display: flex; flex-direction: column; gap: 1.2rem; }
+.pf-info { display: flex; flex-direction: column; gap: 1.2rem; flex: 0 0 320px; }
 .pf-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .pf-title { font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--white); margin: 0; }
 .pf-desc { font-size: 0.95rem; line-height: 1.7; color: var(--offwhite); font-weight: 300; max-width: 420px; margin: 0; }
@@ -384,6 +420,31 @@ form {
   .admin-grid { grid-template-columns: 1fr; }
   .pf-screen { height: 320px; }
   .string-cursor-dot, .string-cursor-ring { display: none !important; }
+  
+  /* Portfolio Mobile Reset */
+  .portfolio-section { height: auto !important; padding: 4rem 0; overflow: hidden; }
+  .portfolio-sticky {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .portfolio-inner { padding: 0 !important; }
+  .h-scroll-track {
+    flex-direction: column;
+    width: 100%;
+    transform: none !important;
+    padding: 0 1.25rem !important;
+    gap: 4rem !important;
+  }
+  .pf-item {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+  .pf-info { flex: auto !important; width: 100%; align-items: center; text-align: center; }
+  .pf-desc { text-align: center; margin: 0 auto; }
+  .pf-meta { justify-content: center; }
+  .pf-screen-scroll { transform: none !important; }
 }
 @media (max-width: 1024px) and (min-width: 769px) {
   .nav { padding: 1.25rem 2rem; }

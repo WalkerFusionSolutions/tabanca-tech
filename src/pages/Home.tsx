@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <>
+    <main>
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section id="hero" style={{ minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', textAlign:'center', position:'relative', overflow:'hidden', padding:'8rem 2rem 4rem' }}>
 
@@ -62,8 +62,8 @@ export default function Home() {
         </p>
 
         <div style={{ display:'flex', gap:'1rem', justifyContent:'center', flexWrap:'wrap', opacity:0, animation:'fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.85s forwards', position:'relative', zIndex:2 }}>
-          <Link to="/contact" className="btn-primary" string="magnetic">Instant Quote</Link>
-          <Link to="/services" className="btn-secondary" string="magnetic">View Work</Link>
+          <Link to="/contact" className="btn-primary" string="magnetic" aria-label="Get an instant quote">Instant Quote</Link>
+          <Link to="/services" className="btn-secondary" string="magnetic" aria-label="View our services">View Work</Link>
         </div>
 
         {/* Trusted by strip moved to marquee below */}
@@ -181,6 +181,6 @@ export default function Home() {
           <Link to="/contact" className="btn-primary reveal" string="magnetic progress">Start your project</Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }
