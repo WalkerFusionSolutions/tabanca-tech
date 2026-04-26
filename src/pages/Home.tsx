@@ -28,17 +28,17 @@ export default function Home() {
         {/* 3D Sphere — hero accent */}
         <div
           className="st3d-hide"
-          string="3d mouse parallax" string-parallax-speed="0.2"
+          string="3d progress parallax" string-parallax-speed="0.2"
           string-3d="sphere"
-          style={{ position:'absolute', top:'10%', right:'5%', width:280, height:280, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.3, ['--material-roughness' as string]:0.1, ['--rotate-y' as string]:'calc(var(--mouse-x,0) * 180deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0) * -180deg)', zIndex:1 } as React.CSSProperties}
+          style={{ position:'absolute', top:'10%', right:'5%', width:280, height:280, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.3, ['--material-roughness' as string]:0.1, ['--rotate-y' as string]:'calc(var(--progress,0) * 720deg)', ['--rotate-x' as string]:'calc(var(--progress,0) * -360deg)', zIndex:1 } as React.CSSProperties}
           aria-hidden="true"
         />
         {/* 3D Torus — lower left */}
         <div
           className="st3d-hide"
-          string="3d mouse parallax" string-parallax-speed="-0.15"
+          string="3d progress parallax" string-parallax-speed="-0.15"
           string-3d="torus"
-          style={{ position:'absolute', bottom:'15%', left:'5%', width:200, height:200, ['--material-type' as string]:'standard', ['--material-color' as string]:'#06d6a0', ['--material-metalness' as string]:0.2, ['--material-roughness' as string]:0.2, ['--rotate-y' as string]:'calc(var(--mouse-x,0) * -180deg + 45deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0) * 180deg + 45deg)', zIndex:1, opacity:0.8 } as React.CSSProperties}
+          style={{ position:'absolute', bottom:'15%', left:'5%', width:200, height:200, ['--material-type' as string]:'standard', ['--material-color' as string]:'#06d6a0', ['--material-metalness' as string]:0.2, ['--material-roughness' as string]:0.2, ['--rotate-y' as string]:'calc(var(--progress,0) * -720deg + 45deg)', ['--rotate-x' as string]:'calc(var(--progress,0) * 360deg + 45deg)', zIndex:1, opacity:0.8 } as React.CSSProperties}
           aria-hidden="true"
         />
 
@@ -79,7 +79,7 @@ export default function Home() {
       <section style={{ padding: '4rem 0', background: 'var(--bg2)', overflow: 'hidden', position: 'relative' }}>
         <div string="parallax" string-parallax-speed="0.15" style={{ position: 'relative', willChange: 'transform' }}>
           <div className="section-label" style={{ justifyContent: 'center', marginBottom: '3rem' }}>
-            Trusted by forward-thinking brands
+          Trusted by forward-thinking brands
           </div>
           <div style={{ display: 'flex', width: '200%', animation: 'marqueeScroll 30s linear infinite', willChange: 'transform' }}>
             {[1, 2].map(set => (
@@ -113,8 +113,8 @@ export default function Home() {
         {/* Decorative 3D box */}
         <div
           className="st3d-hide"
-          string="3d mouse parallax" string-3d="box" string-parallax-speed="0.15"
-          style={{ position:'absolute', right:'3%', top:'15%', width:100, height:100, ['--material-type' as string]:'standard', ['--material-color' as string]:'#a78bfa', ['--material-metalness' as string]:0.1, ['--material-roughness' as string]:0.4, ['--rotate-y' as string]:'calc(var(--mouse-x,0)*360deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0)*-360deg)', opacity:0.5, zIndex:0 } as React.CSSProperties}
+          string="3d progress parallax" string-3d="box" string-parallax-speed="0.15"
+          style={{ position:'absolute', right:'3%', top:'15%', width:100, height:100, ['--material-type' as string]:'standard', ['--material-color' as string]:'#a78bfa', ['--material-metalness' as string]:0.1, ['--material-roughness' as string]:0.4, ['--rotate-y' as string]:'calc(var(--progress,0)*720deg)', ['--rotate-x' as string]:'calc(var(--progress,0)*-720deg)', opacity:0.5, zIndex:0 } as React.CSSProperties}
           aria-hidden="true"
         />
         <div className="section-inner">
@@ -172,8 +172,8 @@ export default function Home() {
         />
         <div
           className="st3d-hide"
-          string="3d mouse" string-3d="sphere"
-          style={{ position:'absolute', left:'8%', top:'20%', width:160, height:160, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.2, ['--material-roughness' as string]:0.2, ['--rotate-y' as string]:'calc(var(--mouse-x,0)*360deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0)*-360deg)', opacity:0.6, zIndex:0 } as React.CSSProperties}
+          string="3d progress" string-3d="sphere"
+          style={{ position:'absolute', left:'8%', top:'20%', width:160, height:160, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.2, ['--material-roughness' as string]:0.2, ['--rotate-y' as string]:'calc(var(--progress,0)*720deg)', ['--rotate-x' as string]:'calc(var(--progress,0)*-720deg)', opacity:0.6, zIndex:0 } as React.CSSProperties}
           aria-hidden="true"
         />
         <div style={{ position:'relative', zIndex:1 }}>

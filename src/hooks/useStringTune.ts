@@ -66,11 +66,8 @@ export function useStringTune() {
       const handleResize = () => {
         if (window.innerWidth <= 768) {
           try { tune.stopModule('StringCursor'); } catch { /* noop */ }
-          try { tune.stopModule('String3D'); } catch { /* noop */ }
           try { tune.stopModule('StringLerpTracker'); } catch { /* noop */ }
         } else {
-          // try { tune.startModule('StringCursor'); } catch { /* noop */ }
-          try { tune.startModule('String3D'); } catch { /* noop */ }
           try { tune.startModule('StringLerpTracker'); } catch { /* noop */ }
         }
       };

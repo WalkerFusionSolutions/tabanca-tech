@@ -265,7 +265,7 @@ form {
 .bento-item-small .card-body { flex: 1; padding: 1.5rem; }
 
 /* Fix StringTune 3D Canvas z-index */
-.st3d-canvas { position: fixed !important; inset: 0 !important; z-index: 0 !important; pointer-events: none !important; }
+.st3d-canvas { position: fixed !important; inset: 0 !important; z-index: 1 !important; pointer-events: none !important; }
 
 .testi-card {
   background: var(--bg3); border: 1px solid var(--border);
