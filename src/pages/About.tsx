@@ -92,11 +92,11 @@ export default function About() {
         <div string="parallax" string-parallax-speed="0.15"
           style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 60% 50% at 100% 50%,rgba(124,107,255,0.06) 0%,transparent 70%)' }}
         />
-        {/* 3D sphere decoration */}
+        {/* 3D dodecahedron decoration */}
         <div
           className="st3d-hide"
-          string="3d progress" string-3d="sphere"
-          style={{ position:'absolute', left:'3%', bottom:'10%', width:140, height:140, ['--material-color' as string]:'#7c6bff', ['--rotate-y' as string]:'calc(var(--progress,0)*360deg)', opacity:0.45, zIndex:0 } as React.CSSProperties}
+          string="3d progress" string-3d="dodecahedron"
+          style={{ position:'absolute', left:'3%', bottom:'10%', width:140, height:140, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.4, ['--rotate-y' as string]:'calc(var(--progress,0)*720deg)', ['--rotate-x' as string]:'calc(var(--progress,0)*360deg)', opacity:0.6, zIndex:0 } as React.CSSProperties}
           aria-hidden="true"
         />
         <div className="section-inner">

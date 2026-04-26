@@ -58,9 +58,10 @@ button { font-family: inherit; cursor: pointer; }
   z-index: 1000;
   padding: 1.5rem 4rem;
   display: flex; align-items: center; justify-content: space-between;
-  backdrop-filter: blur(20px);
-  background: rgba(7,8,13,0.6);
-  border-bottom: 1px solid var(--border);
+  background: rgba(7, 8, 13, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s, padding 0.3s;
 }
 .nav.scrolled {
@@ -254,6 +255,24 @@ form {
   grid-template-rows: repeat(2, 340px);
   gap: 1.5rem;
 }
+
+/* Glass & Glow */
+.glass-panel {
+  background: rgba(13, 15, 26, 0.3) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.underglow { position: relative; border-radius: 16px; }
+.underglow::before {
+  content: ''; position: absolute; inset: -2px;
+  background: linear-gradient(45deg, var(--accent), var(--accent3), var(--accent2));
+  filter: blur(25px); z-index: -1; opacity: 0;
+  border-radius: inherit; transition: opacity 0.5s ease;
+}
+.underglow:hover::before { opacity: 0.8; }
 .bento-item-large { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; }
 .bento-item-large .card-img { height: 100%; position: absolute; inset: 0; z-index: 0; object-fit: cover; }
 .bento-item-large .card-body { position: relative; z-index: 1; background: linear-gradient(to top, rgba(7,8,13,0.98) 20%, rgba(7,8,13,0.7) 60%, transparent 100%); padding: 6rem 2.5rem 2.5rem; border-radius: 0 0 16px 16px; margin-top: auto; }
