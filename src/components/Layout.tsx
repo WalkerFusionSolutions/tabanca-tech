@@ -18,7 +18,7 @@ function Nav() {
   return (
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
-        <Link to="/" className="nav-logo" string="magnetic">
+        <Link to="/" className="nav-logo">
           TABANCA<span>TECH</span>
         </Link>
 
@@ -36,7 +36,6 @@ function Nav() {
                 to={path}
                 end={path === '/'}
                 className={({ isActive }) => isActive ? 'active' : ''}
-                string="magnetic"
               >
                 {label}
               </NavLink>
@@ -45,7 +44,7 @@ function Nav() {
         </ul>
 
         <div style={{ display:'flex', alignItems:'center', gap:'1rem' }}>
-          <Link to="/contact" className="nav-cta" string="magnetic">Kick off</Link>
+          <Link to="/contact" className="nav-cta">Kick off</Link>
           <button
             className={`nav-hamburger${menuOpen ? ' open' : ''}`}
             id="nav-hamburger"
@@ -80,8 +79,9 @@ function Footer() {
             ['/services','Work'],
             ['/testimonials','Clients'],
             ['/contact','Contact'],
+            ['/admin','Admin'],
           ].map(([path, label]) => (
-            <Link key={path} to={path} string="magnetic">{label}</Link>
+            <Link key={path} to={path}>{label}</Link>
           ))}
         </div>
       </div>

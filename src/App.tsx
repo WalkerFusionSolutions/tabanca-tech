@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { useStringTune } from './hooks/useStringTune';
+
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -14,7 +14,7 @@ import ManageProjects from './pages/admin/ManageProjects';
 import ManageTestimonials from './pages/admin/ManageTestimonials';
 
 export default function App() {
-  useStringTune(); // Initialise StringTune once for the whole app
+
 
   return (
     <Routes>
