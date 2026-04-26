@@ -21,18 +21,18 @@ export function useStringTune() {
         return;
       }
 
-      const { StringTune, StringProgress, StringParallax, StringLerpTracker,
+      const { StringTune, StringParallax, StringLerpTracker,
               StringGlide, StringMagnetic, StringSplit } = StringTuneLib as {
         StringTune: { getInstance: () => { use: (m: unknown) => void; start: (fps: number) => void; stopModule: (n: string) => void; startModule: (n: string) => void; destroy: () => void; scan?: () => void };
         };
-        StringProgress: unknown; StringParallax: unknown; StringLerpTracker: unknown;
+        StringParallax: unknown; StringLerpTracker: unknown;
         StringGlide: unknown; StringMagnetic: unknown; StringSplit: unknown;
       };
 
       if (destroyed || !StringTune) return;
 
       const tune = StringTune.getInstance();
-      if (StringProgress)    tune.use(StringProgress);
+      // if (StringProgress)    tune.use(StringProgress);
       if (StringParallax)    tune.use(StringParallax);
       if (StringLerpTracker) tune.use(StringLerpTracker);
       if (StringGlide)       tune.use(StringGlide);
