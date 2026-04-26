@@ -22,11 +22,11 @@ export function useStringTune() {
       }
 
       const { StringTune, StringProgress, StringParallax, StringLerpTracker,
-              StringGlide, StringCursor, StringMagnetic, StringSplit } = StringTuneLib as {
+              StringGlide, StringMagnetic, StringSplit } = StringTuneLib as {
         StringTune: { getInstance: () => { use: (m: unknown) => void; start: (fps: number) => void; stopModule: (n: string) => void; startModule: (n: string) => void; destroy: () => void; scan?: () => void };
         };
         StringProgress: unknown; StringParallax: unknown; StringLerpTracker: unknown;
-        StringGlide: unknown; StringCursor: unknown; StringMagnetic: unknown; StringSplit: unknown;
+        StringGlide: unknown; StringMagnetic: unknown; StringSplit: unknown;
       };
 
       if (destroyed || !StringTune) return;
