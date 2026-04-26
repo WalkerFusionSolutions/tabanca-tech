@@ -11,7 +11,7 @@ export default function Home() {
           <div
             className="hero-bg-gradient"
             string="parallax" string-parallax-speed="0.15"
-            style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 80% 60% at 50% 0%,rgba(124,107,255,0.18) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(6,214,160,0.08) 0%,transparent 60%),var(--bg)', willChange: 'transform' }}
+            style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 80% 60% at 50% 0%,rgba(124,107,255,0.18) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(6,214,160,0.08) 0%,transparent 60%)', willChange: 'transform' }}
           />
           <div
             className="hero-grid"
@@ -28,17 +28,17 @@ export default function Home() {
         {/* 3D Sphere — hero accent */}
         <div
           className="st3d-hide"
-          string="3d progress"
+          string="3d mouse parallax" string-parallax-speed="0.2"
           string-3d="sphere"
-          style={{ position:'absolute', top:'8%', right:'6%', width:260, height:260, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.25, ['--material-roughness' as string]:0.15, ['--rotate-y' as string]:'calc(var(--progress,0) * 720deg)', zIndex:1 } as React.CSSProperties}
+          style={{ position:'absolute', top:'10%', right:'5%', width:280, height:280, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.3, ['--material-roughness' as string]:0.1, ['--rotate-y' as string]:'calc(var(--mouse-x,0) * 180deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0) * -180deg)', zIndex:1 } as React.CSSProperties}
           aria-hidden="true"
         />
         {/* 3D Torus — lower left */}
         <div
           className="st3d-hide"
-          string="3d progress"
+          string="3d mouse parallax" string-parallax-speed="-0.15"
           string-3d="torus"
-          style={{ position:'absolute', bottom:'12%', left:'4%', width:180, height:180, ['--material-type' as string]:'standard', ['--material-color' as string]:'#06d6a0', ['--material-metalness' as string]:0.1, ['--material-roughness' as string]:0.3, ['--rotate-y' as string]:'calc(var(--progress,0) * 360deg)', ['--rotate-x' as string]:'calc(var(--progress,0) * 180deg)', zIndex:1, opacity:0.7 } as React.CSSProperties}
+          style={{ position:'absolute', bottom:'15%', left:'5%', width:200, height:200, ['--material-type' as string]:'standard', ['--material-color' as string]:'#06d6a0', ['--material-metalness' as string]:0.2, ['--material-roughness' as string]:0.2, ['--rotate-y' as string]:'calc(var(--mouse-x,0) * -180deg + 45deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0) * 180deg + 45deg)', zIndex:1, opacity:0.8 } as React.CSSProperties}
           aria-hidden="true"
         />
 
@@ -113,8 +113,8 @@ export default function Home() {
         {/* Decorative 3D box */}
         <div
           className="st3d-hide"
-          string="3d progress" string-3d="box"
-          style={{ position:'absolute', right:'3%', top:'15%', width:100, height:100, ['--material-color' as string]:'#a78bfa', ['--rotate-y' as string]:'calc(var(--progress,0)*360deg)', ['--rotate-x' as string]:'calc(var(--progress,0)*180deg)', opacity:0.5, zIndex:0 } as React.CSSProperties}
+          string="3d mouse parallax" string-3d="box" string-parallax-speed="0.15"
+          style={{ position:'absolute', right:'3%', top:'15%', width:100, height:100, ['--material-type' as string]:'standard', ['--material-color' as string]:'#a78bfa', ['--material-metalness' as string]:0.1, ['--material-roughness' as string]:0.4, ['--rotate-y' as string]:'calc(var(--mouse-x,0)*360deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0)*-360deg)', opacity:0.5, zIndex:0 } as React.CSSProperties}
           aria-hidden="true"
         />
         <div className="section-inner">
@@ -132,24 +132,31 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px,1fr))', gap:'1.5rem' }}>
-            {[
-              { tag:'Web Design', title:'High-Converting Landing Pages', desc:"We design landing pages that don't just look good — they drive real results.", img:'https://leadpages.com/api/pages/1OBQLHZyil/assets/ewf8ffnkuoe161evou7kdgjl', featured:true },
-              { tag:'Branding & Identity', title:'Brand Systems That Scale', desc:'Logos, palettes, typography, and guidelines built to last.', img:'https://leadpages.com/api/pages/1OBQLHZyil/assets/jajnxbpa24z76wnrya8u4bb6', featured:false },
-              { tag:'IT Solutions', title:'Managed IT & Support', desc:'From network setup to cloud migrations with reliable support.', img:'https://leadpages.com/api/pages/1OBQLHZyil/assets/g5q6auh0h5l9zl3x71c2raat', featured:false },
-            ].map((s, i) => (
-              <div key={i} className="work-card reveal" string="progress">
-                <img src={s.img} alt={s.tag} className="card-img" string="parallax" string-parallax-speed="0.1" />
-                <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(7,8,13,0.9) 0%,rgba(7,8,13,0.2) 50%,transparent 100%)', opacity:0, transition:'opacity 0.4s' }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity='0.4')} onMouseLeave={e => (e.currentTarget.style.opacity='0')}
-                />
-                <div className="card-body">
-                  <div className="card-tag">{s.tag}</div>
-                  <div className="card-title">{s.title}</div>
-                  <div className="card-desc">{s.desc}</div>
-                </div>
+          <div className="bento-grid">
+            <div className="work-card bento-item-large reveal" string="progress">
+              <img src="https://leadpages.com/api/pages/1OBQLHZyil/assets/ewf8ffnkuoe161evou7kdgjl" alt="Web Design" className="card-img" />
+              <div className="card-body">
+                <div className="card-tag">Web Design &amp; Development</div>
+                <div className="card-title">High-Converting Digital Experiences</div>
+                <div className="card-desc">We build lightning-fast web applications and sites that don't just look good — they are engineered to convert visitors into loyal customers.</div>
               </div>
-            ))}
+            </div>
+            <div className="work-card bento-item-small reveal" string="progress">
+              <img src="https://leadpages.com/api/pages/1OBQLHZyil/assets/jajnxbpa24z76wnrya8u4bb6" alt="Branding" className="card-img" />
+              <div className="card-body">
+                <div className="card-tag">Brand Identity</div>
+                <div className="card-title">Systems That Scale</div>
+                <div className="card-desc">Logos, palettes, and typography.</div>
+              </div>
+            </div>
+            <div className="work-card bento-item-small reveal" string="progress">
+              <img src="https://leadpages.com/api/pages/1OBQLHZyil/assets/g5q6auh0h5l9zl3x71c2raat" alt="IT Solutions" className="card-img" />
+              <div className="card-body">
+                <div className="card-tag">IT Solutions</div>
+                <div className="card-title">Managed Infrastructure</div>
+                <div className="card-desc">Reliable network and cloud architecture.</div>
+              </div>
+            </div>
           </div>
 
           <div className="reveal" string="progress" style={{ textAlign:'center', marginTop:'3rem' }}>
@@ -165,8 +172,8 @@ export default function Home() {
         />
         <div
           className="st3d-hide"
-          string="3d progress" string-3d="sphere"
-          style={{ position:'absolute', left:'8%', top:'20%', width:120, height:120, ['--material-color' as string]:'#7c6bff', ['--rotate-y' as string]:'calc(var(--progress,0)*360deg)', opacity:0.4, zIndex:0 } as React.CSSProperties}
+          string="3d mouse" string-3d="sphere"
+          style={{ position:'absolute', left:'8%', top:'20%', width:160, height:160, ['--material-type' as string]:'standard', ['--material-color' as string]:'#7c6bff', ['--material-metalness' as string]:0.2, ['--material-roughness' as string]:0.2, ['--rotate-y' as string]:'calc(var(--mouse-x,0)*360deg)', ['--rotate-x' as string]:'calc(var(--mouse-y,0)*-360deg)', opacity:0.6, zIndex:0 } as React.CSSProperties}
           aria-hidden="true"
         />
         <div style={{ position:'relative', zIndex:1 }}>

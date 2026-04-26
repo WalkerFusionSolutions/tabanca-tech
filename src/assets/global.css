@@ -247,6 +247,26 @@ form {
 .card-title { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.6rem; color: var(--white); }
 .card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
 
+/* ── Bento Grid ──────────────────────────────────────────────── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 340px);
+  gap: 1.5rem;
+}
+.bento-item-large { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; }
+.bento-item-large .card-img { height: 100%; position: absolute; inset: 0; z-index: 0; object-fit: cover; }
+.bento-item-large .card-body { position: relative; z-index: 1; background: linear-gradient(to top, rgba(7,8,13,0.98) 20%, rgba(7,8,13,0.7) 60%, transparent 100%); padding: 6rem 2.5rem 2.5rem; border-radius: 0 0 16px 16px; margin-top: auto; }
+.bento-item-large .card-title { font-size: 2.4rem; }
+.bento-item-large .card-desc { font-size: 1.05rem; max-width: 500px; }
+
+.bento-item-small { grid-column: span 1; grid-row: span 1; display: flex; flex-direction: column; }
+.bento-item-small .card-img { height: 180px; object-fit: cover; }
+.bento-item-small .card-body { flex: 1; padding: 1.5rem; }
+
+/* Fix StringTune 3D Canvas z-index */
+.st3d-canvas { position: fixed !important; inset: 0 !important; z-index: 0 !important; pointer-events: none !important; }
+
 .testi-card {
   background: var(--bg3); border: 1px solid var(--border);
   border-radius: 16px; padding: 2rem;
@@ -423,6 +443,11 @@ form {
   .form-row { grid-template-columns: 1fr !important; }
   .admin-layout { grid-template-columns: 1fr; }
   .admin-grid { grid-template-columns: 1fr; }
+  .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .bento-item-large { grid-column: span 1; grid-row: span 1; }
+  .bento-item-small { grid-column: span 1; grid-row: span 1; }
+  .bento-item-large .card-img { position: relative; height: 280px; }
+  .bento-item-large .card-body { padding: 1.75rem; background: transparent; }
   .pf-screen { height: 320px; }
   .pf-browser:hover .pf-screen img { transform: translateY(calc(-100% + 320px)); }
   .string-cursor-dot, .string-cursor-ring { display: none !important; }
