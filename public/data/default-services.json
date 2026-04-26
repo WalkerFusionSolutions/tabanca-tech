@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "tag": "Web Design",
+    "title": "High-Converting Landing Pages",
+    "description": "We design landing pages that don't just look good — they drive real results. Every layout decision is backed by conversion principles and sharp aesthetics.",
+    "image": "https://leadpages.com/api/pages/1OBQLHZyil/assets/ewf8ffnkuoe161evou7kdgjl",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "tag": "Branding & Identity",
+    "title": "Brand Systems That Scale",
+    "description": "Logos, palettes, typography, and guidelines. We build brand identities that stay consistent from your website to your business card.",
+    "image": "https://leadpages.com/api/pages/1OBQLHZyil/assets/jajnxbpa24z76wnrya8u4bb6",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "tag": "IT Solutions",
+    "title": "Managed IT & Support",
+    "description": "From network setup to cloud migrations, we handle the tech so you can focus on growing your business. Reliable, responsive, affordable.",
+    "image": "https://leadpages.com/api/pages/1OBQLHZyil/assets/g5q6auh0h5l9zl3x71c2raat",
+    "featured": false
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "domain": "cilantro.gd",
+    "tag": "Web Design & Dev",
+    "title": "Cilantro Restaurant",
+    "description": "A full-stack restaurant website with online reservations, menu management, and a custom CMS — built for a Caribbean dining experience.",
+    "image": "https://leadpages.com/api/library/pibszxzqo57bp4v96z1qq5jq",
+    "link": "https://cilantro-mhtg376gm-walkerfusionsolutions-8509s-projects.vercel.app/#top",
+    "pills": ["Next.js", "Vercel", "Custom CMS"]
+  },
+  {
+    "id": 2,
+    "domain": "moviepalace.gd",
+    "tag": "Web Design & Dev",
+    "title": "Movie Palace Grenada",
+    "description": "A cinema booking platform for Grenada's premier movie theatre — featuring live showtimes, seat selection, and mobile ticket delivery.",
+    "image": "https://leadpages.com/api/library/get1hixezmtho6t8d8o334hr",
+    "link": "https://movie-palace-grenada-c9n3u81jd.vercel.app/",
+    "pills": ["React", "Vercel", "Booking System"]
+  }
+]
