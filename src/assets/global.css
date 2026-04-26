@@ -387,6 +387,15 @@ form {
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
+/* Hide StringTune Progress Bar Loader */
+.string-progress-bar,
+.string-progress-track,
+[class*="string-progress-"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav { padding: 1rem 1.25rem; }
