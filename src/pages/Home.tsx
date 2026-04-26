@@ -84,7 +84,7 @@ export default function Home() {
           <div style={{ display: 'flex', width: '200%', animation: 'marqueeScroll 30s linear infinite', willChange: 'transform' }}>
             {[1, 2].map(set => (
               <div key={set} style={{ display: 'flex', width: '50%', justifyContent: 'space-around', alignItems: 'center' }}>
-                {['StartupFlow','NovaBrand','RealEdge','PulseMedia','TerraCo', 'Vanguard', 'ApexLogic'].map(name => (
+                {['Stash Street','Cilantro','Movie Palace','Lavo Lanes','TAMCC',"L&M's Catering"].map(name => (
                   <div key={name} style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                     color: 'rgba(255,255,255,0.2)',
