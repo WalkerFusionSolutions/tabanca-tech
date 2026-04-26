@@ -36,7 +36,7 @@ export function useStringTune() {
       if (StringParallax)    tune.use(StringParallax);
       if (StringLerpTracker) tune.use(StringLerpTracker);
       if (StringGlide)       tune.use(StringGlide);
-      if (StringCursor)      tune.use(StringCursor);
+      // if (StringCursor)      tune.use(StringCursor);
       if (StringMagnetic)    tune.use(StringMagnetic);
       if (StringSplit)       tune.use(StringSplit);
 
@@ -69,7 +69,7 @@ export function useStringTune() {
           try { tune.stopModule('String3D'); } catch { /* noop */ }
           try { tune.stopModule('StringLerpTracker'); } catch { /* noop */ }
         } else {
-          try { tune.startModule('StringCursor'); } catch { /* noop */ }
+          // try { tune.startModule('StringCursor'); } catch { /* noop */ }
           try { tune.startModule('String3D'); } catch { /* noop */ }
           try { tune.startModule('StringLerpTracker'); } catch { /* noop */ }
         }

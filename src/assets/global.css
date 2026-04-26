@@ -46,18 +46,12 @@ body {
   color: var(--white);
   font-family: var(--font-body);
   overflow-x: hidden;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
-}
-
-@media (max-width: 768px) {
-  body { cursor: auto !important; }
 }
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
-button { font-family: inherit; cursor: none; }
-@media (max-width: 768px) { button { cursor: pointer !important; } }
+button { font-family: inherit; cursor: pointer; }
 
 /* ── Nav ─────────────────────────────────────────────────────── */
 .nav {
@@ -226,7 +220,7 @@ form {
   font-size: 0.95rem; padding: 1rem 2rem;
   border-radius: 100px; border: none;
   transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
-  letter-spacing: 0.01em; cursor: none;
+  letter-spacing: 0.01em; cursor: pointer;
 }
 .form-submit:hover {
   background: var(--accent); color: var(--white);
